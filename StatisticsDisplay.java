@@ -1,14 +1,8 @@
 /**
- * StatisticsDisplay - Display de Estadísticas
- *
+ * 
  * Lleva un historial de todas las temperaturas recibidas
  * y muestra estadísticas: mínima, máxima y promedio.
- *
- * Implementa: Observer, DisplayElement
- *
- * Demuestra cómo un Observer puede acumular datos
- * a lo largo del tiempo, en lugar de solo mostrar
- * el estado más reciente.
+ * 
  */
 public class StatisticsDisplay implements Observer, DisplayElement {
 
@@ -22,7 +16,6 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     /**
      * Constructor: se registra automáticamente como observador.
      *
-     * @param weatherData El Subject al que se suscribe.
      */
     public StatisticsDisplay(Subject weatherData) {
         this.weatherData = weatherData;

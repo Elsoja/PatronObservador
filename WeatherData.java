@@ -2,16 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * WeatherData - Clase Subject (Sujeto Observable)
- *
+ * 
  * Es el núcleo del sistema de la estación meteorológica.
  * Almacena las mediciones actuales (temperatura, humedad, presión)
  * y gestiona la lista de observadores suscritos.
- *
- * Cada vez que las mediciones cambian mediante setMeasurements(),
- * automáticamente notifica a todos los observadores registrados.
- *
- * Implementa: Subject
+ * 
  */
 public class WeatherData implements Subject {
 
@@ -33,8 +28,6 @@ public class WeatherData implements Subject {
     /**
      * Registra un observador nuevo en la lista.
      * A partir de este momento, recibirá notificaciones.
-     *
-     * @param o El observador a registrar.
      */
     @Override
     public void registerObserver(Observer o) {
@@ -44,8 +37,6 @@ public class WeatherData implements Subject {
     /**
      * Elimina un observador de la lista.
      * Deja de recibir notificaciones.
-     *
-     * @param o El observador a eliminar.
      */
     @Override
     public void removeObserver(Observer o) {
@@ -55,7 +46,6 @@ public class WeatherData implements Subject {
     /**
      * Notifica a todos los observadores suscritos
      * enviándoles los valores actuales de las mediciones.
-     *
      * Usa el modelo "push": los datos se envían como argumentos.
      */
     @Override
@@ -68,12 +58,7 @@ public class WeatherData implements Subject {
     /**
      * Llamado cuando hay nuevas mediciones disponibles
      * (por ejemplo, desde sensores físicos o simulación).
-     *
      * Actualiza el estado interno y dispara la notificación.
-     *
-     * @param temperature Nueva temperatura en grados Celsius.
-     * @param humidity    Nueva humedad relativa (%).
-     * @param pressure    Nueva presión atmosférica (hPa).
      */
     public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
@@ -85,9 +70,7 @@ public class WeatherData implements Subject {
     /**
      * Indica que las mediciones han cambiado y
      * activa la notificación a los observadores.
-     *
      * Separar este método facilita extensiones futuras
-     * (e.g., notificar solo si el cambio supera un umbral).
      */
     private void measurementsChanged() {
         notifyObservers();

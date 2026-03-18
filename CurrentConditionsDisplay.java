@@ -1,16 +1,5 @@
 /**
  * CurrentConditionsDisplay - Display de Condiciones Actuales
- *
- * Muestra en tiempo real la temperatura y humedad recibidas
- * del sujeto WeatherData cuando ocurre una actualización.
- *
- * Implementa: Observer, DisplayElement
- *
- * - Como Observer: recibe notificaciones con los nuevos datos.
- * - Como DisplayElement: imprime los datos en pantalla.
- *
- * Guarda una referencia al Subject para poder desregistrarse
- * en el futuro si fuera necesario (buena práctica).
  */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
@@ -21,8 +10,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     /**
      * Constructor: se registra automáticamente como observador
      * en el Subject recibido.
-     *
-     * @param weatherData El Subject al que se suscribe.
+     * 
      */
     public CurrentConditionsDisplay(Subject weatherData) {
         this.weatherData = weatherData;
